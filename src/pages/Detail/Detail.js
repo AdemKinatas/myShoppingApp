@@ -9,6 +9,6 @@ const Detail = () => {
             </View>
         </SafeAreaView>
     );
-};
+}
 
 export default Detail;
