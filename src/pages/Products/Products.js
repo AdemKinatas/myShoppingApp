@@ -6,10 +6,14 @@ import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 
-const Products = () => {
-    const { error, loading, data } = useFetch(Config.API_URL + 'adem');
+const Products = ({ navigation }) => {
+    const { error, loading, data } = useFetch(Config.API_URL);
 
-    const renderProduct = ({ item }) => <ProductCard product={item} />;
+    const handleProductSelect = id => {
+        navigation.navigate('Detay', { id });
+    }
+
+    const renderProduct = ({ item }) => <ProductCard product={item} onSelect={() => handleProductSelect(item.id)} />;
 
     if (loading) {
         return (
@@ -24,11 +28,7 @@ const Products = () => {
     }
 
 
-    return (
-        <SafeAreaView style={styles.container}>
-            <FlatList data={data} renderItem={renderProduct} />
-        </SafeAreaView>
-    );
+    return <FlatList data={data} renderItem={renderProduct} />;
 }
 
 export default Products;

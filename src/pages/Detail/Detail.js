@@ -1,14 +1,40 @@
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import styles from './Detail.style';
+import Config from 'react-native-config';
+import useFetch from '../../hooks/useFetch';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
-const Detail = () => {
-    return(
-        <SafeAreaView>
-            <View>
-                <Text>Products</Text>
+const Detail = ({ route }) => {
+    const { id } = route.params;
+    const { loading, error, data } = useFetch(`${Config.API_URL}/${id}ade`);
+    console.log('Loading : ' + loading + " Error : " + error + " Data : " + data);
+
+    if (loading) {
+        return <Loading />;
+    }
+
+    if (error) {
+        return <Error />;
+    }
+
+    if (data){
+        return (
+            <View style={styles.container}>
+                <View style={styles.image_container}>
+                    <Image source={{ uri: data.image }} style={styles.image} />
+                </View>
+                <View style={styles.body_container}>
+                    <Text style={styles.title}>{data.title}</Text>
+                    <Text style={styles.description}>{data.description}</Text>
+                    <Text style={styles.price}>{data.price} ₺</Text>
+                </View>
             </View>
-        </SafeAreaView>
-    );
+        );
+    }else{
+        return <Error />;
+    } 
 }
 
 export default Detail;

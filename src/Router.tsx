@@ -14,9 +14,10 @@ function App() {
           name="Ürünler"
           component={Products}
           options={{
+            title: "Ürünler",
             headerTitleAlign: "center",
-            headerTintColor : "white",
-            statusBarColor : "#479DE5",
+            headerTintColor: "white",
+            statusBarColor: "#479DE5",
             navigationBarColor: "transparent",
             headerStyle: {
               backgroundColor: "#479DE5"
@@ -27,13 +28,14 @@ function App() {
           name="Detay"
           component={Detail}
           options={{
+            title: "Detay",
             headerTitleAlign: "center",
-            headerTintColor : "white",
-            statusBarColor : "#479DE5",
+            headerTintColor: "white",
+            statusBarColor: "#479DE5",
             navigationBarColor: "#479DE5",
             headerStyle: {
               backgroundColor: "#479DE5"
-            } 
+            }
           }}
         />
       </Stack.Navigator>
