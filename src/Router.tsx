@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Products from './pages/Products';
 import Detail from './pages/Detail';
+import Login from './pages/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,6 +11,15 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="Giriş"
+          component={Login}
+          options={{
+            headerShown: false,
+            statusBarColor: "#479DE5",
+            navigationBarColor: "transparent",
+          }}
+        />
         <Stack.Screen
           name="Ürünler"
           component={Products}
