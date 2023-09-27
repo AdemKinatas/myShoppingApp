@@ -1,7 +1,6 @@
-import { SafeAreaView, FlatList, ActivityIndicator, Text } from 'react-native';
+import { FlatList } from 'react-native';
 import Config from 'react-native-config';
 import ProductCard from '../../components/Cards/ProductCard';
-import styles from './Products.style';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
