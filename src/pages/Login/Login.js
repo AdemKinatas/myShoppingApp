@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { KeyboardAvoidingView, View, Image } from 'react-native';
 import styles from './Login.style';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -13,7 +13,7 @@ const Login = () => {
     }
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
             <Image source={logo} style={styles.logo} />
             <Formik
                 initialValues={{ username: '', password: '' }} onSubmit={handleLogin} >
@@ -23,17 +23,20 @@ const Login = () => {
                             placeholder="Kullanıcı adınızı giriniz"
                             value={values.username}
                             onType={handleChange('username')}
+                            iconName="account"
                         />
                         <Input
                             placeholder="Şifrenizi giriniz"
                             value={values.password}
                             onType={handleChange('password')}
+                            iconName="key"
+                            isSecure
                         />
                         <Button text="Giriş Yap" onPressHandle={handleSubmit} />
                     </View>
                 )}
             </Formik>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 

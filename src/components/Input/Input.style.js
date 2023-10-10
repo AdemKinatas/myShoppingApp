@@ -10,5 +10,14 @@ export default StyleSheet.create({
         paddingHorizontal: 10,
         marginBottom: 15,
         color: 'black',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
+    input: {
+        flex: 1,
+    },
+    icon: {
+        color: 'gray',
+        fontSize: 25,
+    }
 });
