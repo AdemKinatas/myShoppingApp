@@ -6,10 +6,10 @@ import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 
 const Products = ({ navigation }) => {
-    const { error, loading, data } = useFetch(Config.API_URL);
+    const { error, loading, data } = useFetch(Config.API_PRODUCT_URL);
 
     const handleProductSelect = id => {
-        navigation.navigate('Detay', { id });
+        navigation.navigate('ProductDetailPage', { id });
     }
 
     const renderProduct = ({ item }) => <ProductCard product={item} onSelect={() => handleProductSelect(item.id)} />;

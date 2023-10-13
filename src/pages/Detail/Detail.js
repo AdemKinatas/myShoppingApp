@@ -8,8 +8,7 @@ import Error from '../../components/Error';
 
 const Detail = ({ route }) => {
     const { id } = route.params;
-    const { loading, error, data } = useFetch(`${Config.API_URL}/${id}ade`);
-    console.log('Loading : ' + loading + " Error : " + error + " Data : " + data);
+    const { loading, error, data } = useFetch(`${Config.API_PRODUCT_URL}/${id}`);
 
     if (loading) {
         return <Loading />;
@@ -19,7 +18,7 @@ const Detail = ({ route }) => {
         return <Error />;
     }
 
-    if (data){
+    if (data) {
         return (
             <View style={styles.container}>
                 <View style={styles.image_container}>
@@ -32,9 +31,9 @@ const Detail = ({ route }) => {
                 </View>
             </View>
         );
-    }else{
+    } else {
         return <Error />;
-    } 
+    }
 }
 
 export default Detail;

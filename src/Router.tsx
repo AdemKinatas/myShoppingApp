@@ -12,7 +12,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Giriş"
+          name="LoginPage"
           component={Login}
           options={{
             headerShown: false,
@@ -21,7 +21,7 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="Ürünler"
+          name="ProductsPage"
           component={Products}
           options={{
             title: "Ürünler",
@@ -35,7 +35,7 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="Detay"
+          name="ProductDetailPage"
           component={Detail}
           options={{
             title: "Detay",
