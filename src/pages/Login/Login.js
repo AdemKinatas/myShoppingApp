@@ -6,7 +6,6 @@ import Button from '../../components/Button';
 import { Formik } from 'formik';
 import usePost from '../../hooks/usePost';
 import Config from 'react-native-config';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux'
 
 const logo = require('../../files/images/shopping.png');
